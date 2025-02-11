@@ -1,6 +1,6 @@
 const getPelicula = async ()=>{
     const id = new URLSearchParams(window.location.search).get('id')
-    const data = await fetch(`https://localhost/cinestar_sweb/peliculas/${id}`)
+    const data = await fetch(`http://localhost/cinestar_sweb_php/peliculas/${id}`)
     if(data.status == 200){
         let pelicula = await data.json()
         pelicula = pelicula.data
@@ -34,14 +34,13 @@ const getPelicula = async ()=>{
 							</div>
 						</div>
 					</div>
-					<img src="img/pelicula/1.jpg" width="160" height="226"><br/><br/>
+					<img src="img/pelicula/${pelicula.id}.jpg" width="160" height="226"><br/><br/>
 				</div>
 				<div class="pelicula-video">
-					<embed src="https://www.youtube.com/v/6maujJFcuxAfs" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="580" height="400">
+					<embed src="https://www.youtube.com/v/${pelicula.Link}" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="580" height="400">
 				</div>`
-
-    }
     document.getElementById('contenido-interno').innerHTML = html
+    }
 }
 
 getPelicula()

@@ -13,7 +13,7 @@ console.log(data);
 						<p>${pelicula.Sinopsis}</p>
 						<br/>
                        	<div class="boton-pelicula"> 
-                       		<a href="peliculas.html?id=${pelicula.id}" >
+                       		<a href="pelicula.html?id=${pelicula.id}" >
                        			<img src="img/varios/btn-mas-info.jpg" width="120" height="30" alt="Ver info"/>
                        		</a>
                			</div>
